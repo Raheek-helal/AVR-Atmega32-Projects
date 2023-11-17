@@ -1,0 +1,3 @@
+In this project, I counted instruction cycles and looped them to create a fixed delay using rule(((inside loop cycles*the loop counter)+outer loop cycles)*the outer loop counter).
+                                **Which is not available in any other programming language with this accuracy**. 
+And finally this delay is displayed at 8-LED Blinking using proteus IDE.
