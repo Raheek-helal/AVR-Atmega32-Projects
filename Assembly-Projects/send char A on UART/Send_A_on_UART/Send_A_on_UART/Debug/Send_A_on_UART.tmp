@@ -1,0 +1,31 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega32A"</DEVICE>
+ <WORKING_DIR>E:\embeddedawy\mixed projects\send char A on UART\Send_A_on_UART\Send_A_on_UART\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>E:\embeddedawy\mixed projects\send char A on UART\Send_A_on_UART\Send_A_on_UART\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>E:\embeddedawy\mixed projects\send char A on UART\Send_A_on_UART\Send_A_on_UART\Debug\Send_A_on_UART.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>Send_A_on_UART.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>Send_A_on_UART.map</FILE>
+  <FILE>Send_A_on_UART.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <init><FILE>E:\embeddedawy\mixed projects\send char A on UART\Send_A_on_UART\Send_A_on_UART\main.asm</FILE><LINE>19</LINE></init>
+  <int0_isr><FILE>E:\embeddedawy\mixed projects\send char A on UART\Send_A_on_UART\Send_A_on_UART\main.asm</FILE><LINE>62</LINE></int0_isr>
+  <main><FILE>E:\embeddedawy\mixed projects\send char A on UART\Send_A_on_UART\Send_A_on_UART\main.asm</FILE><LINE>49</LINE></main>
+  <DELAY><FILE>E:\embeddedawy\mixed projects\send char A on UART\Send_A_on_UART\Send_A_on_UART\main.asm</FILE><LINE>54</LINE></DELAY>
+  <LOOP><FILE>E:\embeddedawy\mixed projects\send char A on UART\Send_A_on_UART\Send_A_on_UART\main.asm</FILE><LINE>56</LINE></LOOP>
+ </LABELS>
+</ASSEMBLER_INFO>

@@ -1,0 +1,35 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega32A"</DEVICE>
+ <WORKING_DIR>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\Debug\interrupt.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>interrupt.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>interrupt.map</FILE>
+  <FILE>interrupt.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <init><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>23</LINE></init>
+  <int0_isr><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>65</LINE></int0_isr>
+  <int1_isr><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>73</LINE></int1_isr>
+  <main><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>53</LINE></main>
+  <DELAY><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>81</LINE></DELAY>
+  <loop0><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>83</LINE></loop0>
+  <loop1><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>89</LINE></loop1>
+  <loop2><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>92</LINE></loop2>
+  <loop3><FILE>E:\embeddedawy\mixed projects\interrupt\interrupt\interrupt\main.asm</FILE><LINE>95</LINE></loop3>
+ </LABELS>
+</ASSEMBLER_INFO>
