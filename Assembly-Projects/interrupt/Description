@@ -1,0 +1,4 @@
+in this project, I made 2 LED blinking (PA0 and PA1) with 500ms delay, enabled int0 interrupt and enabled int1 interrupt and set them as INPUTS,
+int0 interrupt and int1 interrupt configured as in the falling edge generates an interrupt request,
+when the int0 interrupt reads an interrupt request, PB0 is set as OUTPUT 1 and PB1 is set as OUTPUT 0,
+when the int1 interrupt reads an interrupt request, PB0 is set as OUTPUT 0 and PB1 is set as OUTPUT 1.
