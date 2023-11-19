@@ -1,0 +1,29 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega32"</DEVICE>
+ <WORKING_DIR>E:\embeddedawy\Atmel studio\push_using_ST_instruction\push_using_ST_instruction\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>E:\embeddedawy\Atmel studio\push_using_ST_instruction\push_using_ST_instruction\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>E:\embeddedawy\Atmel studio\push_using_ST_instruction\push_using_ST_instruction\Debug\push_using_ST_instruction.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>push_using_ST_instruction.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>push_using_ST_instruction.map</FILE>
+  <FILE>push_using_ST_instruction.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <init><FILE>E:\embeddedawy\Atmel studio\push_using_ST_instruction\push_using_ST_instruction\main.asm</FILE><LINE>11</LINE></init>
+  <_push><FILE>E:\embeddedawy\Atmel studio\push_using_ST_instruction\push_using_ST_instruction\main.asm</FILE><LINE>17</LINE></_push>
+  <_pop><FILE>E:\embeddedawy\Atmel studio\push_using_ST_instruction\push_using_ST_instruction\main.asm</FILE><LINE>33</LINE></_pop>
+ </LABELS>
+</ASSEMBLER_INFO>
