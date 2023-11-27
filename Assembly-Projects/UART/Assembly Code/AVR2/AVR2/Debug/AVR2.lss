@@ -1,8 +1,8 @@
 
-AVRASM ver. 2.2.8  E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm Fri Nov 03 14:44:44 2023
+AVRASM ver. 2.2.8  E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm Mon Nov 27 01:33:37 2023
 
-E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc'
-E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc'
+E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc'
+E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc'
                                  
                                  
                                  ; AVR2.asm
@@ -835,7 +835,7 @@ E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm(9): Includin
 000000 940c 0030                 	JMP init
                                  .ORG 0X006
                                  	; PB2 interrupt
-000006 940c 0040                 	JMP int2_isr
+000006 940c 003f                 	JMP int2_isr
                                  .ORG 0X030
                                  ; initialize the stack pointer
                                  init:
@@ -860,67 +860,81 @@ E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm(9): Includin
                                  	
                                  
                                  main:
-                                 	;add the defualt status for the LEDs
-00003d e000                      	LDI R16,  0X00
-00003e bb02                      	OUT PORTD,R16
-00003f cffd                      	RJMP main
+00003d 0000                      	NOP
+00003e cffe                      	RJMP main
                                  
                                  ; interrupt service routine
                                  int2_isr:
                                  	; execute the interrupt service routine
-000040 940e 0077                 	CALL DELAY
-000042 940e 0077                 	CALL DELAY
-000044 940e 0077                 	CALL DELAY
+00003f 940e 0086                 	CALL DELAY
+000041 940e 0086                 	CALL DELAY
+000043 940e 0086                 	CALL DELAY
                                  
-000046 99b2                      	SBIC PINB, 2
-000047 9a90                      	SBI  PORTD,0
-000048 940e 0077                 	CALL DELAY
-00004a 940e 0077                 	CALL DELAY
+000045 99b2                      	SBIC PINB, 2
+000046 9a90                      	SBI  PORTD,0
+000047 9bb2                      	SBIS PINB, 2
+000048 9890                      	CBI  PORTD,0
+000049 940e 0086                 	CALL DELAY
+00004b 940e 0086                 	CALL DELAY
                                  
-00004c 99b2                      	SBIC PINB, 2
-00004d 9a91                      	SBI  PORTD,1
-00004e 940e 0077                 	CALL DELAY
-000050 940e 0077                 	CALL DELAY
+00004d 99b2                      	SBIC PINB, 2
+00004e 9a91                      	SBI  PORTD,1
+00004f 9bb2                      	SBIS PINB, 2
+000050 9891                      	CBI  PORTD,1
+000051 940e 0086                 	CALL DELAY
+000053 940e 0086                 	CALL DELAY
                                  
-000052 99b2                      	SBIC PINB, 2
-000053 9a92                      	SBI  PORTD,2
-000054 940e 0077                 	CALL DELAY
-000056 940e 0077                 	CALL DELAY
+000055 99b2                      	SBIC PINB, 2
+000056 9a92                      	SBI  PORTD,2
+000057 9bb2                      	SBIS PINB, 2
+000058 9892                      	CBI  PORTD,2
+000059 940e 0086                 	CALL DELAY
+00005b 940e 0086                 	CALL DELAY
                                  
-000058 99b2                      	SBIC PINB, 2
-000059 9a93                      	SBI  PORTD,3
-00005a 940e 0077                 	CALL DELAY
-00005c 940e 0077                 	CALL DELAY
+00005d 99b2                      	SBIC PINB, 2
+00005e 9a93                      	SBI  PORTD,3
+00005f 9bb2                      	SBIS PINB, 2
+000060 9893                      	CBI  PORTD,3
+000061 940e 0086                 	CALL DELAY
+000063 940e 0086                 	CALL DELAY
                                  
-00005e 99b2                      	SBIC PINB, 2
-00005f 9a94                      	SBI  PORTD,4
-000060 940e 0077                 	CALL DELAY
-000062 940e 0077                 	CALL DELAY
+000065 99b2                      	SBIC PINB, 2
+000066 9a94                      	SBI  PORTD,4
+000067 9bb2                      	SBIS PINB, 2
+000068 9894                      	CBI  PORTD,4
+000069 940e 0086                 	CALL DELAY
+00006b 940e 0086                 	CALL DELAY
                                  
-000064 99b2                      	SBIC PINB, 2
-000065 9a95                      	SBI  PORTD,5
-000066 940e 0077                 	CALL DELAY
-000068 940e 0077                 	CALL DELAY
+00006d 99b2                      	SBIC PINB, 2
+00006e 9a95                      	SBI  PORTD,5
+00006f 9bb2                      	SBIS PINB, 2
+000070 9895                      	CBI  PORTD,5
+000071 940e 0086                 	CALL DELAY
+000073 940e 0086                 	CALL DELAY
                                  
-00006a 99b2                      	SBIC PINB, 2
-00006b 9a96                      	SBI  PORTD,6
-00006c 940e 0077                 	CALL DELAY
-00006e 940e 0077                 	CALL DELAY
+000075 99b2                      	SBIC PINB, 2
+000076 9a96                      	SBI  PORTD,6
+000077 9bb2                      	SBIS PINB, 2
+000078 9896                      	CBI  PORTD,6
+000079 940e 0086                 	CALL DELAY
+00007b 940e 0086                 	CALL DELAY
                                  
-000070 99b2                      	SBIC PINB, 2
-000071 9a97                      	SBI  PORTD,7
-000072 940e 0077                 	CALL DELAY
-000074 940e 0077                 	CALL DELAY
+00007d 99b2                      	SBIC PINB, 2
+00007e 9a97                      	SBI  PORTD,7
+00007f 9bb2                      	SBIS PINB, 2
+000080 9897                      	CBI  PORTD,7
+000081 940e 0086                 	CALL DELAY
+000083 940e 0086                 	CALL DELAY
                                  
-000076 9518                      	RETI
+000085 9518                      	RETI
                                  
                                  DELAY:
-000077 e00e                      	LDI  R16,14      ; 1 cycle -> 42
+000086 e00e                      	LDI  R16,14      ; 1 cycle -> 42
                                  LOOP:                ; 6 in last loop
-000078 950a                      	DEC  R16         ; 1 cycle -> 41
-000079 f7f1                      	BRNE LOOP        ; 2 cycle -> 39
-00007a 0000                      	NOP
-00007b 0000                      	NOP
+000087 950a                      	DEC  R16         ; 1 cycle -> 41
+000088 f7f1                      	BRNE LOOP        ; 2 cycle -> 39
+000089 0000                      	NOP
+00008a 0000                      	NOP
 
 
 RESOURCE USE INFORMATION
@@ -940,7 +954,7 @@ counted separately from r26..r31 here.
 "ATmega32A" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  16 r17:   0 r18:   0 r19:   0 r20:   0 
+r13:   0 r14:   0 r15:   0 r16:  14 r17:   0 r18:   0 r19:   0 r20:   0 
 r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
 Registers used: 1 out of 35 (2.9%)
@@ -951,26 +965,26 @@ andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
 brne  :   1 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  19 cbi   :   1 cbr   :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  19 cbi   :   9 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   0 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
 fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   0 jmp   :   2 
-ld    :   0 ldd   :   0 ldi   :   8 lds   :   0 lpm   :   0 lsl   :   0 
+ld    :   0 ldd   :   0 ldi   :   7 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
-neg   :   0 nop   :   2 or    :   0 ori   :   0 out   :   7 pop   :   0 
+neg   :   0 nop   :   3 or    :   0 ori   :   0 out   :   6 pop   :   0 
 push  :   0 rcall :   0 ret   :   1 reti  :   1 rjmp  :   1 rol   :   0 
-ror   :   0 sbc   :   0 sbci  :   0 sbi   :   8 sbic  :   8 sbis  :   0 
+ror   :   0 sbc   :   0 sbci  :   0 sbi   :   8 sbic  :   8 sbis  :   8 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   0 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 13 out of 113 (11.5%)
+Instructions used: 14 out of 113 (12.4%)
 
 "ATmega32A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000fa    162      0    162   32768   0.5%
+[.cseg] 0x000000 0x000118    192      0    192   32768   0.6%
 [.dseg] 0x000060 0x000060      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

@@ -1,16 +1,15 @@
 
-AVRASM ver. 2.2.8  E:\embeddedawy\Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm Fri Nov 17 21:06:49 2023
+AVRASM ver. 2.2.8  E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm Sun Nov 26 23:08:42 2023
 
-E:\embeddedawy\Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc'
-E:\embeddedawy\Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm(9): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc'
+E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm(8): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc'
+E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm(8): Including file 'C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc'
                                  
                                  
                                  ; AVR1.asm
                                  ;
                                  ; Created: 10/22/2023 1:55:39 PM
-                                 ; Author : Raheek-Hela
+                                 ; Author : Raheek-Helal
                                  ;
-                                 
                                  
                                  .INCLUDE <m32adef.inc>
                                  
@@ -827,7 +826,8 @@ E:\embeddedawy\Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm(
                                  
                                  #endif  /* _M32ADEF_INC_ */
                                  
-                                 
+                                 .equ	TxPort	= PORTC
+                                 .equ	TxPin = 0
                                  ; Replace with your application code
                                  ; initialize the stack pointer
                                  init:
@@ -841,85 +841,99 @@ E:\embeddedawy\Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm(
                                  	; intialize PORTA as input PULL UP
 000006 ef0f                      	LDI R16, $FF
 000007 bb0b                      	OUT PORTA,R16
-                                 	; intialize PORTC0 as an output
+                                 	
+                                 	; intialize PORTC0 as an output Tx
 000008 9aa0                      	SBI DDRC,0
                                  
+                                 	;LDI R16, 0x01
+                                 	;OUT DDRC, R16
+                                 	;idel
+000009 9aa8                      	SBI TxPort, TxPin
                                  main:
+                                 	; WAIT FOR SOME TIME
+00000a 940e 0044                 	CALL DELAY
+00000c 940e 0044                 	CALL DELAY
+00000e 940e 0044                 	CALL DELAY
+000010 940e 0044                 	CALL DELAY
+000012 940e 0044                 	CALL DELAY
+000014 940e 0044                 	CALL DELAY
+                                 
+                                 	; START OF FRAME
                                  	;SEND 0 FOR THE START BIT
-000009 98a8                      	CBI PORTC, 0
-00000a 940e 0052                 	CALL DELAY
-00000c 940e 0052                 	CALL DELAY
+000016 98a8                      	CBI TxPort, TxPin
+                                 	; those two delay points should consume 104 cycle
+000017 940e 0044                 	CALL DELAY
                                  
-                                 	;READING THE PORTA AND SEND IT IN PORTC(PIN0)
-00000e 9bc8                      	SBIS PINA, 0
-00000f 9aa8                      	SBI  PORTC,0
-000010 99c8                      	SBIC PINA, 0
-000011 98a8                      	CBI  PORTC,0
-000012 940e 0052                 	CALL DELAY
-000014 940e 0052                 	CALL DELAY
+000019 e005                      	LDI R16,5
+00001a 0000                      	NOP
+                                 LoopStart:
+00001b 950a                      	DEC R16
+00001c f7f1                      	BRNE LoopStart
                                  
-000016 9bc9                      	SBIS PINA, 1
-000017 9aa8                      	SBI  PORTC,0
-000018 99c9                      	SBIC PINA, 1
-000019 98a8                      	CBI  PORTC,0
-00001a 940e 0052                 	CALL DELAY
-00001c 940e 0052                 	CALL DELAY
+                                 	;READING THE PINA AND SEND IT IN PORTC(PIN0)
+                                 	;READ PORTA PIN 0
+00001d e031                      	LDI  R19, (1<<0)
+00001e 940e 0039                 	CALL Sender
                                  
-00001e 9bca                      	SBIS PINA, 2
-00001f 9aa8                      	SBI  PORTC,0
-000020 99ca                      	SBIC PINA, 2
-000021 98a8                      	CBI  PORTC,0
-000022 940e 0052                 	CALL DELAY
-000024 940e 0052                 	CALL DELAY
+                                 	;READ PORTA PIN 1
+000020 e032                      	LDI  R19, (1<<1)
+000021 940e 0039                 	CALL Sender
                                  
-000026 9bcb                      	SBIS PINA, 3
-000027 9aa8                      	SBI  PORTC,0
-000028 99cb                      	SBIC PINA, 3
-000029 98a8                      	CBI  PORTC,0
-00002a 940e 0052                 	CALL DELAY
-00002c 940e 0052                 	CALL DELAY
+                                 	;READ PORTA PIN 2
+000023 e034                      	LDI  R19, (1<<2)
+000024 940e 0039                 	CALL Sender
                                  
-00002e 9bcc                      	SBIS PINA, 4
-00002f 9aa8                      	SBI  PORTC,0
-000030 99cc                      	SBIC PINA, 4
-000031 98a8                      	CBI  PORTC,0
-000032 940e 0052                 	CALL DELAY
-000034 940e 0052                 	CALL DELAY
+                                 	;READ PORTA PIN 3
+000026 e038                      	LDI  R19, (1<<3)
+000027 940e 0039                 	CALL Sender
                                  
-000036 9bcd                      	SBIS PINA, 5
-000037 9aa8                      	SBI  PORTC,0
-000038 99cd                      	SBIC PINA, 5
-000039 98a8                      	CBI  PORTC,0
-00003a 940e 0052                 	CALL DELAY
-00003c 940e 0052                 	CALL DELAY
+                                 	;READ PORTA PIN 4
+000029 e130                      	LDI  R19, (1<<4)
+00002a 940e 0039                 	CALL Sender
                                  
-00003e 9bce                      	SBIS PINA, 6
-00003f 9aa8                      	SBI  PORTC,0
-000040 99ce                      	SBIC PINA, 6
-000041 98a8                      	CBI  PORTC,0
-000042 940e 0052                 	CALL DELAY
-000044 940e 0052                 	CALL DELAY
+                                 	;READ PORTA PIN 5
+00002c e230                      	LDI  R19, (1<<5)
+00002d 940e 0039                 	CALL Sender
+                                 	
+                                 	;READ PORTA PIN 6
+00002f e430                      	LDI  R19, (1<<6)
+000030 940e 0039                 	CALL Sender
                                  
-000046 9bcf                      	SBIS PINA, 7
-000047 9aa8                      	SBI  PORTC,0
-000048 99cf                      	SBIC PINA, 7
-000049 98a8                      	CBI  PORTC,0
-00004a 940e 0052                 	CALL DELAY
-00004c 940e 0052                 	CALL DELAY
+                                 	;READ PORTA PIN 7
+000032 e830                      	LDI  R19, (1<<7)
+000033 940e 0039                 	CALL Sender
                                  
-                                 	;SEND 1 FOR THE STOP BIT
-00004e 9aa8                      	SBI PORTC,0
-00004f 940e 0052                 	CALL DELAY
+                                 	;SEND 1 FOR THE ONE STOP BIT
+000035 9aa8                      	SBI PORTC,0
+000036 940e 0044                 	CALL DELAY
+000038 cfd1                      	RJMP main
                                  
-000051 cfb7                      	RJMP main
+                                 ; Reading R19 value 
+                                 Sender:
+000039 b359                      	IN   R21,  PINA              ;READ PINA IN REG R21
+00003a 9550                      	COM  R21
+00003b 2353                      	AND  R21,  R19               ;GET BIT R21 will be R19 if PINAx is set
+00003c 2766                      	CLR  R22
+00003d 1356                      	CPSE R21,  R22
+00003e 9aa8                      	SBI  PORTC,0
+00003f 1353                      	CPSE R21,  R19               ;COMPARE PINA BIT N  SKIP IF EQUAL 1
+000040 98a8                      	CBI  PORTC,0
+                                 
+                                 	; delay for 104 cycles
+000041 940e 0044                 	CALL DELAY
+000043 9508                      	RET
                                  
                                  DELAY:
-000052 e00e                      	LDI  R16,14 ; 1 cycle -> 42
-                                 LOOP: ; 6 in last loop
-000053 950a                      	DEC  R16  ; 1 cycle -> 41
-000054 f7f1                      	BRNE LOOP ; 2 cycle -> 39
-000055 0000                      	NOP
-000056 0000                      	NOP
+000044 940e 0049                 	CALL SUB_DELAY
+000046 940e 0049                 	CALL SUB_DELAY
+000048 9508                      	RET
+                                 
+                                 SUB_DELAY:
+000049 e04a                      	LDI  R20,10                  ; 1 cycle -> 42
+                                 LOOP:                            ; 6 in last loop
+00004a 954a                      	DEC  R20                     ; 1 cycle -> 41
+00004b f7f1                      	BRNE LOOP                    ; 2 cycle -> 39	
+00004c 0000                      	NOP                    
 
 
 RESOURCE USE INFORMATION
@@ -939,37 +953,37 @@ counted separately from r26..r31 here.
 "ATmega32A" register use summary:
 x  :   0 y  :   0 z  :   0 r0 :   0 r1 :   0 r2 :   0 r3 :   0 r4 :   0 
 r5 :   0 r6 :   0 r7 :   0 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 
-r13:   0 r14:   0 r15:   0 r16:  10 r17:   0 r18:   0 r19:   0 r20:   0 
-r21:   0 r22:   0 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
+r13:   0 r14:   0 r15:   0 r16:  10 r17:   0 r18:   0 r19:  10 r20:   2 
+r21:   5 r22:   2 r23:   0 r24:   0 r25:   0 r26:   0 r27:   0 r28:   0 
 r29:   0 r30:   0 r31:   0 
-Registers used: 1 out of 35 (2.9%)
+Registers used: 5 out of 35 (14.3%)
 
 "ATmega32A" instruction use summary:
-.lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   0 
+.lds  :   0 .sts  :   0 adc   :   0 add   :   0 adiw  :   0 and   :   1 
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   0 brcs  :   0 break :   0 breq  :   0 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   0 brlt  :   0 brmi  :   0 
-brne  :   1 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :  19 cbi   :   9 cbr   :   0 
-clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   0 cls   :   0 
-clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
-cpi   :   0 cpse  :   0 dec   :   1 eor   :   0 fmul  :   0 fmuls :   0 
-fmulsu:   0 icall :   0 ijmp  :   0 in    :   0 inc   :   0 jmp   :   0 
-ld    :   0 ldd   :   0 ldi   :   5 lds   :   0 lpm   :   0 lsl   :   0 
+brne  :   2 brpl  :   0 brsh  :   0 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :  19 cbi   :   2 cbr   :   0 
+clc   :   0 clh   :   0 cli   :   0 cln   :   0 clr   :   1 cls   :   0 
+clt   :   0 clv   :   0 clz   :   0 com   :   1 cp    :   0 cpc   :   0 
+cpi   :   0 cpse  :   2 dec   :   2 eor   :   0 fmul  :   0 fmuls :   0 
+fmulsu:   0 icall :   0 ijmp  :   0 in    :   1 inc   :   0 jmp   :   0 
+ld    :   0 ldd   :   0 ldi   :  14 lds   :   0 lpm   :   0 lsl   :   0 
 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 mulsu :   0 
 neg   :   0 nop   :   2 or    :   0 ori   :   0 out   :   4 pop   :   0 
-push  :   0 rcall :   0 ret   :   1 reti  :   0 rjmp  :   1 rol   :   0 
-ror   :   0 sbc   :   0 sbci  :   0 sbi   :  10 sbic  :   8 sbis  :   8 
+push  :   0 rcall :   0 ret   :   3 reti  :   0 rjmp  :   1 rol   :   0 
+ror   :   0 sbc   :   0 sbci  :   0 sbi   :   4 sbic  :   0 sbis  :   0 
 sbiw  :   0 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 seh   :   0 
 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 sev   :   0 
 sez   :   0 sleep :   0 spm   :   0 st    :   0 std   :   0 sts   :   0 
 sub   :   0 subi  :   0 swap  :   0 tst   :   0 wdr   :   0 
-Instructions used: 12 out of 113 (10.6%)
+Instructions used: 15 out of 113 (13.3%)
 
 "ATmega32A" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x0000b0    176      0    176   32768   0.5%
+[.cseg] 0x000000 0x00009c    156      0    156   32768   0.5%
 [.dseg] 0x000060 0x000060      0      0      0    2048   0.0%
 [.eseg] 0x000000 0x000000      0      0      0    1024   0.0%
 

@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.2.8  E:\embeddedawy\Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm Fri Nov 17 21:06:49 2023
+AVRASM ver. 2.2.8  E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR1\AVR1\main.asm Sun Nov 26 23:08:42 2023
 
 
 EQU  SIGNATURE_000 0000001e
@@ -568,7 +568,12 @@ EQU  ACIaddr      00000024
 EQU  TWIaddr      00000026
 EQU  SPMRaddr     00000028
 EQU  INT_VECTORS_SIZE 0000002a
+EQU  TxPort       00000015
+EQU  TxPin        00000000
 CSEG init         00000000
-CSEG main         00000009
-CSEG DELAY        00000052
-CSEG LOOP         00000053
+CSEG main         0000000a
+CSEG DELAY        00000044
+CSEG LoopStart    0000001b
+CSEG Sender       00000039
+CSEG SUB_DELAY    00000049
+CSEG LOOP         0000004a
