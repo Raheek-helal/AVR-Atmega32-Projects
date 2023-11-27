@@ -1,18 +1,18 @@
 <ASSEMBLER_INFO>
  <VERSION>2.2.8</VERSION>
  <DEVICE>"ATmega32A"</DEVICE>
- <WORKING_DIR>E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\Debug</WORKING_DIR>
+ <WORKING_DIR>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\Debug</WORKING_DIR>
  <INCLUDE_PATH>
   <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
   <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
   <DIR></DIR>
  </INCLUDE_PATH>
- <SOURCE_FILE>E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm</SOURCE_FILE>
+ <SOURCE_FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm</SOURCE_FILE>
  <INCLUDED_FILES>
   <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc</FILE>
  </INCLUDED_FILES>
  <OBJECT_FILES>
-  <FILE>E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\Debug\AVR2.obj</FILE>
+  <FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\Debug\AVR2.obj</FILE>
  </OBJECT_FILES>
  <HEX_FILES>
   <FILE>AVR2.hex</FILE>
@@ -22,10 +22,10 @@
   <FILE>AVR2.lss</FILE>
  </OUTPUT_FILES>
  <LABELS>
-  <init><FILE>E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>21</LINE></init>
-  <int2_isr><FILE>E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>49</LINE></int2_isr>
-  <main><FILE>E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>42</LINE></main>
-  <DELAY><FILE>E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>97</LINE></DELAY>
-  <LOOP><FILE>E:\embeddedawy\mixed projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>99</LINE></LOOP>
+  <init><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>21</LINE></init>
+  <int2_isr><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>47</LINE></int2_isr>
+  <main><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>42</LINE></main>
+  <DELAY><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>111</LINE></DELAY>
+  <LOOP><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART\Assembly Code\AVR2\AVR2\main.asm</FILE><LINE>113</LINE></LOOP>
  </LABELS>
 </ASSEMBLER_INFO>
