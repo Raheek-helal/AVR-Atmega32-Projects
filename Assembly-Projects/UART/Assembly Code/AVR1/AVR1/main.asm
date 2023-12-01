@@ -113,5 +113,5 @@ SUB_DELAY:
 LOOP:                            ; 6 in last loop
 	DEC  R20                     ; 1 cycle -> 41
 	BRNE LOOP                    ; 2 cycle -> 39	
-	NOP                    
+	NOP 
 	RET
