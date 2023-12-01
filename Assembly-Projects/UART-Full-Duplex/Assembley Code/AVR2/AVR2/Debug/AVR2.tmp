@@ -1,0 +1,37 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.2.8</VERSION>
+ <DEVICE>"ATmega32A"</DEVICE>
+ <WORKING_DIR>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc</DIR>
+  <DIR>C:\Program Files (x86)\Atmel\Studio\7.0\toolchain\avr8\avrassembler\Include</DIR>
+  <DIR></DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>C:/Program Files (x86)\Atmel\Studio\7.0\Packs\atmel\ATmega_DFP\1.7.374\avrasm\inc\m32adef.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\Debug\AVR2.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>AVR2.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>AVR2.map</FILE>
+  <FILE>AVR2.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <init><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>22</LINE></init>
+  <int2_isr><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>107</LINE></int2_isr>
+  <main><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>50</LINE></main>
+  <DELAY><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>160</LINE></DELAY>
+  <LoopStart><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>68</LINE></LoopStart>
+  <Sender><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>140</LINE></Sender>
+  <SUBDELAY><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>176</LINE></SUBDELAY>
+  <RECIEVER><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>150</LINE></RECIEVER>
+  <SUB_DELAY><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>166</LINE></SUB_DELAY>
+  <LOOP><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>168</LINE></LOOP>
+  <LOOP1><FILE>E:\embeddedawy\git\AVR-Atmega32-Projects\Assembly-Projects\UART-Full-Duplex\Assembley Code\AVR2\AVR2\main.asm</FILE><LINE>178</LINE></LOOP1>
+ </LABELS>
+</ASSEMBLER_INFO>
