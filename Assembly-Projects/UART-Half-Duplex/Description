@@ -1,0 +1,18 @@
+#THE HW COMPONENTS
+In this project I used two microcontrollers to interface them together using UART PROTOCOL
+the first MCU has 8 push buttons connected to PORTA which initialized as INPUT 
+and the second one has 8 LEDs connected to PORTD which initialized as OUTPUT
+
+#THE TARGET OF THE TASK
+the target is to make a communication between the Microcontrollers using UART PROTOCOL
+when any push button in the first MCU be pressed the equative LED in the second one will turned on
+BY SENDING THE DATA IN THE 
+
+#UPDATE
+1- The first update is that I reduced the duplicate parts in the first MCU in the code 
+and this caused some issues in timing To fix these problems, I started doing some Debuging techniques
+like using THE VIRTUAL TERMINAL and THE OSCILLOSCOPE
+
+2- The second update is that I replaced the main task of turned off the LEDs with NOP 
+and instead after SBIC i put SBIS PINB, 2
+							 CBI  PORTD,PIN(X)
