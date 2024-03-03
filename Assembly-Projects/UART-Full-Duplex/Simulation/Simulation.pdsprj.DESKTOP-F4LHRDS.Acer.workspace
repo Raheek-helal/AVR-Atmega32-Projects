@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000030000000083ffff0083fffffffffffffffffffff60000000000000056050000d0020000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000fffffffffffffffffffffffffffffffff60000000000000056050000d0020000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
@@ -31,7 +31,7 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="30" x="108" flags="00000008" y="169" h="16" pid="3" iid="1">
+   <POPUP w="226" x="108" flags="00000008" y="169" h="215" pid="3" iid="1">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="128" flags="0000000a" y="189" h="1" pid="10" iid="1">
@@ -94,7 +94,7 @@
      <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="30" x="248" flags="00000008" y="309" h="16" pid="3" iid="2">
+   <POPUP w="226" x="248" flags="00000008" y="309" h="215" pid="3" iid="2">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="268" flags="0000000a" y="329" h="1" pid="10" iid="2">
@@ -157,20 +157,26 @@
      <ITEM name="TopLineAddress">00000020</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="80" flags="00008023" y="0" h="250" pid="0" iid="7">
+   <POPUP w="450" x="80" flags="00000023" y="0" h="250" pid="0" iid="7">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="450" x="960" flags="00000023" y="606" h="269" pid="0" iid="8">
+   <POPUP w="450" x="916" flags="00000023" y="469" h="269" pid="0" iid="8">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="695" x="238" flags="00000001" y="648" h="453" pid="0" iid="9">
+   <POPUP w="695" x="398" flags="00000001" y="557" h="453" pid="0" iid="9">
     <PROPERTIES/>
+   </POPUP>
+   <POPUP w="450" x="-65" flags="00008023" y="352" h="250" pid="0" iid="10">
+    <PROPERTIES>
+     <ITEM name="AutoEcho">0</ITEM>
+     <ITEM name="HexMode">1</ITEM>
+    </PROPERTIES>
    </POPUP>
   </PWI>
  </MODULE>
