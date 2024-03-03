@@ -169,10 +169,10 @@
      <ITEM name="HexMode">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="695" x="398" flags="00000001" y="557" h="453" pid="0" iid="9">
+   <POPUP w="695" x="371" flags="00008001" y="226" h="453" pid="0" iid="9">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="450" x="-65" flags="00008023" y="352" h="250" pid="0" iid="10">
+   <POPUP w="450" x="-65" flags="00000023" y="352" h="250" pid="0" iid="10">
     <PROPERTIES>
      <ITEM name="AutoEcho">0</ITEM>
      <ITEM name="HexMode">1</ITEM>

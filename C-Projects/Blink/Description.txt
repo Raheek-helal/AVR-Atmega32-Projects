@@ -1,0 +1,1 @@
+In this project, I tried to compile file.c to get the object file and get the hex file without IDE by installing some tools and CMD
